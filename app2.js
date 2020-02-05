@@ -16,12 +16,12 @@ app.set("views", "./views");
 app.use("/", express.static("./public"));
 
 /*********** Router ***********/
-app.get("/pug", (req, res) => {
-	res.render('sample.pug')
+app.get("/", (req, res) => {
+	res.render("index.pug");
 });
-app.get("/pug2", (req, res) => {
-	res.render('sample2.pug')
+app.get("/portfolio", (req, res) => {
+	res.render("portfolio.pug");
 });
-app.get("/pug3", (req, res) => {
-	res.render('sample3.pug')
+app.get("/about", (req, res) => {
+	res.render("about.pug");
 });
