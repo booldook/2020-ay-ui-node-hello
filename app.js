@@ -5,7 +5,9 @@ app.listen(3000, function(){
 	console.log("http://127.0.0.1");
 });
 
-app.get("/", function(req, res) {
+app.use("/", express.static("./public"));
+
+app.get("/hello", function(req, res) {
 	var user = req.query.name;
 	res.send(`BOOLDOOK: ${user}님 안녕하세요~`);
 });
