@@ -1,5 +1,10 @@
 /* Common */
-
+.header {color: #fffe99;}
+.header a {color: inherit;}
+.header a:link {color: inherit;}
+.header a:hover {color: inherit;}
+.header a:visited {color: inherit;}
+.header a:active {color: inherit;}
 
 /* Header */
 
