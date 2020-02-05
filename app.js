@@ -21,23 +21,19 @@ var htmlHeader = `
 	<script src="/js/wow.min.js"></script>
 </head>
 <body>
-	<!-- Header -->
 	<header class="header bg-dark d-flex justify-content-between">
 		<a class="logo p-3" href="/">LOGO</a>
 		<div class="navi-wrap d-flex">
 			<a class="p-3" href="/">HOME</a>
 			<a class="p-3" href="/sample.html">Sample</a>
 			<a class="p-3" href="/hello?name=booldook">Hello</a>
-			<a class="p-3" href="/bye?name=booldook">Bye</a>
+			<a class="p-3" href="/bye/booldook">Bye</a>
 		</div>
 	</header>
-	<!-- Main -->
 	<main class="main-wrap p-3 text-center">`;
 
 var htmlFooter = `
 </main>
-	<!--  -->
-	<!-- Footer -->
 	<footer class="footer"></footer>
 	<script src="/js/index.js"></script>
 </body>
@@ -54,8 +50,8 @@ app.get("/hello", function(req, res) {
 	res.send(`${htmlHeader}BOOLDOOK: ${user}님 안녕하세요~${htmlFooter}`);
 });
 
-app.get("/bye", function(req, res) {
-	var user = req.query.name;
+app.get("/bye/:name", function(req, res) {
+	var user = req.params.name;
 	res.send(`${htmlHeader}BOOLDOOK: ${user}님 안녕히 가세요~${htmlFooter}`);
 });
 
